@@ -1,0 +1,112 @@
+.recipe-details {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.loading,
+.error {
+  text-align: center;
+  margin: 2rem;
+  font-size: 1.2rem;
+}
+
+.recipe-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  color: green;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Image Styling — main fix */
+.recipe-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* <--- change this from 'cover' to 'contain' */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+  max-height: 500px; /* optional limit to prevent it from being too tall */
+  background-color: #fff; /* just in case image doesn't fill the area */
+}
+
+
+/* Meta section */
+.recipe-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f8f8f8;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+/* Grid layout for content */
+.recipe-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Ingredients list styling */
+.ingredients ul {
+  padding-left: 1.5rem;
+  list-style-type: none;
+}
+
+.ingredients li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.ingredients li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #ff642f;
+}
+
+.instructions {
+  line-height: 1.6;
+}
+
+/* Medium and up (tablet & desktop) */
+@media (min-width: 768px) {
+  .recipe-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .recipe-image {
+    aspect-ratio: 16 / 9;
+    max-height: 500px;
+  }
+
+  .recipe-content {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+  .recipe-image {
+    aspect-ratio: auto;
+    height: auto;
+    max-height: 70vh;
+  }
+}
